@@ -1,7 +1,7 @@
 module Erlectricity
   class HashCondition < Condition
     def satisfies?(arg)
-      return false unless arg.class == Array
+      return false unless arg.class == Erl::List
       arg.all? { |x| x.class == Array && x.length == 2 }
     end
 
