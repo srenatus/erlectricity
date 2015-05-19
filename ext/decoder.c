@@ -32,13 +32,11 @@ VALUE read_any_raw(unsigned char **pData);
 // checkers
 
 void check_int(int num) {
-  char buf[17];
-  sprintf(buf, "%u", num);
-  rb_raise(rb_eStandardError, buf);
+  rb_raise(rb_eStandardError, "%u", num);
 }
 
 void check_str(char *str) {
-  rb_raise(rb_eStandardError, str);
+  rb_raise(rb_eStandardError, "%s", str);
 }
 
 // string peekers/readers
