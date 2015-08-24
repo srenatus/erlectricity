@@ -23,7 +23,7 @@ module Erlectricity
     def send(term)
       @encoder.out = StringIO.new('', 'w')
       @encoder.write_any(term)
-      data = @encoder.out.string
+      data = @encoder.out.string.force_encoding("ISO-8859-1")
       output.write([data.length].pack("N"))
       output.write(data)
     end
