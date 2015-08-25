@@ -24,7 +24,7 @@ module Erlectricity
       @encoder.out = StringIO.new('', 'w')
       @encoder.write_any(term)
       data = @encoder.out.string
-      output.write([data.length].pack("N"))
+      output.write([data.bytes.length].pack("N"))
       output.write(data)
     end
 
